@@ -49,4 +49,6 @@ set style fill transparent solid 0.5 noborder
 #set style fill solid 0.5 # fill style
 
 #count and plot
+set table 'hist_temp_diff.txt'
 plot [-1:1] "temperatures" u (hist($3-$4,width)):(1.0) smooth freq w boxes fs transparent solid 0.75 lc rgb "green" t "T1-T2", "temperatures" u (hist($3-$5,width)):(1.0) smooth freq w boxes fs transparent solid 0.5 lc rgb "red" t "T1-T3", "temperatures" u (hist($4-$5,width)):(1.0) smooth freq w boxes fs transparent solid 0.5 lc rgb "blue" t "T2-T3"
+unset table
